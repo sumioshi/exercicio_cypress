@@ -6,9 +6,10 @@ describe('Testes para Agenda', () => {
     })
 
     it('Deve realizar remoção de um contato', () => {
+        cy.contains('Rodrigo Sumioshi 2').should('be.visible')
+
         cy.get('.sc-gueYoa > .delete').first().click()
 
-        // verificar se foi removido
         cy.get('.sc-gueYoa').should('not.contain', 'Rodrigo Sumioshi 2')
     })
 })
